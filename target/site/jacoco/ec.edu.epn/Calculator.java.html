@@ -40,9 +40,9 @@
      * @throws IllegalArgumentException If the divisor (b) is zero.
      */
     public double divide(int a, int b) {
-<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if (b == 0) {</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (b == 0) {</span>
             // It's good practice to throw a standard exception for invalid input errors.
-<span class="nc" id="L45">            throw new IllegalArgumentException(&quot;The divisor cannot be zero.&quot;);</span>
+<span class="fc" id="L45">            throw new IllegalArgumentException(&quot;The divisor cannot be zero.&quot;);</span>
         }
         // Cast to (double) to ensure floating-point division, even with integers.
 <span class="fc" id="L48">        return (double) a / b;</span>
