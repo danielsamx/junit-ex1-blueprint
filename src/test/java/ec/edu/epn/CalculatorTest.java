@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -64,6 +65,16 @@ public class CalculatorTest {
     @ValueSource(ints = {2,30,-6,0})
     void isEven_MultipleNumbers_ShouldReturnTrue(int number){
         assertTrue(calculator.isEven(number));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "1,2,3",
+            "5,7,12",
+            "1,-2,-1"
+    })
+    void add_MultipleValues_ReturnCorrectValue(int a, int b, int expected){
+        assertEquals(expected, calculator.add(a, b));
     }
 
     @Test
