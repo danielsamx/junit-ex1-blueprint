@@ -77,6 +77,36 @@ public class CalculatorTest {
         assertEquals(expected, calculator.add(a, b));
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "1,2,-1",
+            "5,7,-2",
+            "1,-2,3"
+    })
+    void subtract_MultipleValues_ReturnCorrectValue(int a, int b, int expected){
+        assertEquals(expected, calculator.subtract(a, b));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "1,2,2",
+            "5,7,35",
+            "1,-2,-2"
+    })
+    void multiply_MultipleValues_ReturnCorrectValue(int a, int b, int expected){
+        assertEquals(expected, calculator.multiply(a, b));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "10,2,5",
+            "5,5,1",
+            "20,5,4"
+    })
+    void divide_MultipleValues_ReturnCorrectValue(int a, int b, int expected){
+        assertEquals(expected, calculator.divide(a, b));
+    }
+
     @Test
     void divide_TwoPositiveNumbers_ReturnsCorrectOutient() {
         double result =  calculator.divide(10, 4);
