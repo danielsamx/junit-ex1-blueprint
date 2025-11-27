@@ -15,5 +15,19 @@ public class StringValidator {
             throw new IllegalArgumentException("Input cannot be empty.");
         }
     }
-    
+
+
+    /**
+     * Check if a string is palindrome
+     * @param input The string to check
+     * @return true if the input is palindrome
+     * @return false if the input is palindrome
+     * return false if the input is null
+     */
+    public boolean isPalindrome(String input) {
+        if (input == null) {
+            return false;
+        }
+        return new StringBuilder(input).reverse().toString().equals(input);
+    }
 }
