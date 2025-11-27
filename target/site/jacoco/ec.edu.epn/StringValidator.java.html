@@ -15,6 +15,20 @@
 <span class="nc" id="L15">            throw new IllegalArgumentException(&quot;Input cannot be empty.&quot;);</span>
         }
 <span class="nc" id="L17">    }</span>
-    
+
+
+    /**
+     * Check if a string is palindrome
+     * @param input The string to check
+     * @return true if the input is palindrome
+     * @return false if the input is palindrome
+     * return false if the input is null
+     */
+    public boolean isPalindrome(String input) {
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (input == null) {</span>
+<span class="nc" id="L29">            return false;</span>
+        }
+<span class="nc" id="L31">        return new StringBuilder(input).reverse().toString().equals(input);</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
